@@ -23,9 +23,9 @@ public class UserDao {
       db.insert(sql,para);
     }
 
-    public UserInfo query(String name){
-        String sql= "select * from  user where name = ?";
-        String[] para= new String[]{name};
+    public UserInfo query(String name,String pwd){
+        String sql= "select * from  user where name = ? and password=?";
+        String[] para= new String[]{name,pwd};
         UserInfo userInfo = db.queryUser(sql,para);
 //        Cursor cursor=dbo.query("select * from information",null);
 //        List<Information> informations = getInformation(cursor);
